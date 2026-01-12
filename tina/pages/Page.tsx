@@ -1,8 +1,8 @@
 import { tinaField, useTina } from "tinacms/dist/react";
 import type { PageQuery, PageQueryVariables } from "../__generated__/types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import Banner from "../../src/components/react/Banner";
-import Blocks from "../../src/components/react/Blocks";
+import Banner from "../../src/components/react/Banner.tsx";
+import Blocks from "../../src/components/react/Blocks.tsx";
 
 type Props = {
   variables: PageQueryVariables;
