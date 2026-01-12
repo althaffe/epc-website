@@ -19,8 +19,6 @@ const TinaPage = (props: Props) => {
 
   const page = data.page;
 
-  console.log(page);
-
   return (
     <>
       <Banner page={page} />
