@@ -4,65 +4,65 @@ import config from "../content/config/config.json";
 import IconLink from "./react/IconLink";
 ---
 
-<header>
-	<nav>
-		<h2><a href="/">{config.seo.title}</a></h2>
-		<div class="internal-links">
-			{
-				config.nav.map((nav) => (
-					<HeaderLink href={nav.link}>{nav.title}</HeaderLink>
-				))
-			}
-		</div>
-		<div class="social-links">
-			{
-				config?.contactLinks?.map((link) => {
-					return (
-						<IconLink {...link} />
-					);
-				})
-			}
-		</div>
-	</nav>
-</header>
-<style>
-	header {
-		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
+<header class="border-t-4 border-primary">
+  <div class="container pt-6 max-md:pb-2 flex items-center gap-8">
 
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	}
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
-	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
-	}
-	.social-links,
-	.social-links a {
-		display: flex;
-	}
-	@media (max-width: 720px) {
-		.social-links {
-			display: none;
-		}
-	}
-</style>
+    <a href="/">
+     	<img class="w-32 md:w-40" src="/logo.jpg" alt="">
+		</a>
+
+		<div class="space-y-5">
+      <div class="flex items-center gap-8  max-lg:hidden">
+    		<h1 class="text-2xl">EnviroPlus Consulting, LLC </h1>
+      </div>
+     	<nav>
+    		<div class="flex gap-6 items-center max-lg:hidden">
+   			{
+    				config.nav.map((nav) => (
+   					<HeaderLink href={nav.link}>{nav.title}</HeaderLink>
+    				))
+   			}
+
+    		</div>
+     	</nav>
+    </div>
+
+    <button id="sidebar-toggle" class="ml-auto lg:hidden cursor-pointer border py-1 px-3 rounded border-black/10">Nav</button>
+
+    <div id="sidebar-menu" class="fixed translate-x-full z-20 inset-0 bg-white/50 group [&.open]:translate-x-0">
+
+      <div class="z-10 translate-x-full transition-transform duration-300 absolute right-0 shadow top-0 bottom-0 bg-white px-5 py-6 w-sm max-w-[90vw]! group-[.open]:translate-x-0">
+      		<div class="flex flex-col gap-6 justify-center ">
+     			{
+      				config.nav.map((nav) => (
+     					<HeaderLink href={nav.link}>{nav.title}</HeaderLink>
+      				))
+     			}
+      		</div>
+      </div>
+    </div>
+  	<!-- <div class="flex items-center gap-4">
+  		{
+  			config?.contactLinks?.map((link) => {
+  				return (
+  					<IconLink {...link} />
+  				);
+  			})
+  		}
+  	</div> -->
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('sidebar-toggle')
+  const menu = document.getElementById('sidebar-menu')
+  console.log({ toggle, menu})
+
+  toggle.addEventListener('click', (e) => {
+    menu.classList.add('open')
+  })
+
+  menu.addEventListener('click', e => {
+    if (e.target === menu) menu.classList.remove('open')
+  })
+</script>

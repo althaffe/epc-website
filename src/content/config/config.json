@@ -2,7 +2,7 @@
   "seo": {
     "title": "Astro Blog + Tina",
     "description": "Welcome to my website!",
-    "siteOwner": "Your name here"
+    "siteOwner": "EnviroPlus Consulting LLC"
   },
   "nav": [
     {
@@ -10,12 +10,28 @@
       "link": "/"
     },
     {
-      "title": "Blog",
-      "link": "/blog"
+      "title": "Projects",
+      "link": "/projects"
+    },
+    {
+      "title": "Drone Services",
+      "link": "drone-services"
+    },
+    {
+      "title": "Personnel",
+      "link": "personnel"
+    },
+    {
+      "title": "WBE Certificate",
+      "link": "wbe-certificate"
     },
     {
       "title": "About",
       "link": "/about"
+    },
+    {
+      "title": "Contact",
+      "link": "/contact"
     }
   ],
   "contactLinks": [

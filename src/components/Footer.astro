@@ -2,94 +2,32 @@
 import config from "../content/config/config.json";
 import IconLink from "./react/IconLink";
 const today = new Date();
+
 ---
-<div class="tina-footer">
-	<div class="tina-banner-content"><img src="/llama.svg" alt="Tina CMS Llama Logo" /><a href="https://tina.io" target="_blank" rel="noopener noreferrer">Powered by TinaCMS</a>
+	<footer class="bg-primary text-white mt-8 py-8 font-light">
+	<div class="container">
+    <div class="grid lg:grid-cols-4 gap-20">
+     	<div class="lg:col-span-2">
+       	<h2 class="text-2xl">About Us</h2>
+       	<p class="font-light leading-relaxed mt-2">EnviroPlus Consulting was formed in 1987 and was incorporated in 2013. EPC has been providing biological, environmental, and now archeological services for over 25 years.</p>
+     	</div>
+     	<div>
+       	<h2 class="text-2xl">Contact Us</h2>
+        <div class="mt-2 space-y-2 [&_svg]:w-5 [&_svg]:min-w-5 [&_a]:hover:underline">
+          <div class="flex gap-2 items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail-icon lucide-mail"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+            <a href="mailto:info@enviroplusconsulting.com">info@enviroplusconsulting.com</a>
+          </div>
+          <div class="flex gap-2 items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-icon lucide-phone"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+            <a href="tel:8052311149">(805) 231-1149</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  	<div class="font-light text-sm mt-16">
+     Copyright &copy; {today.getFullYear()} {config.seo.siteOwner}. All rights reserved.
+    </div>
 	</div>
-</div>
-	<footer class="copyright-footer">
-		&copy; {today.getFullYear()}
-		{config.seo.siteOwner}. All rights reserved.
-		<div class="social-links">
-			{
-				config?.contactLinks?.map((link) => {
-					return (
-						<IconLink {...link} />
-					);
-				})
-			}
-		</div>
+
 	</footer>
-
-<style>
-
-	.copyright-footer {
-		padding: 2em 1em 2em 1em;
-		background: linear-gradient(var(--gray-gradient)) no-repeat;
-		color: rgb(var(--gray));
-		text-align: center;
-	}
-
-	.social-links {
-		display: flex;
-		justify-content: center;
-		gap: 1em;
-		margin-top: 1em;
-	}
-
-	.social-links a {
-		text-decoration: none;
-		color: rgb(var(--gray));
-	}
-
-	.social-links a:hover {
-		color: rgb(var(--gray-dark));
-	}
-
-	.tina-footer {
-		display: flex;
-		justify-content: center;
-		position: relative;
-		width: 100%;
-		overflow: hidden;
-		background-image: linear-gradient(60deg, #000000 0%,  #EC4815 50%, #000000 100%);
-		padding: 1.5em 0;
-	}
-
-	.tina-banner-content {
-		display: flex;
-		align-items: center;
-		gap: 0.5em;
-		font-size: 1.2em;
-		position: relative;
-		z-index: 2;
-	}
-
-	.tina-footer::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: -50%;
-		width: 200%;
-		height: 100%;
-		background-image: linear-gradient(60deg, #1F1E24 25%,   #EC4815 50%, #1F1E24 75%);
-		transition: transform 1s ease-in-out;
-		z-index: 1;
-	}
-
-	.tina-footer:has(.tina-banner-content a:hover)::before {
-		transform: scaleX(2);
-	}
-
-	.tina-banner-content img {
-		width: 30px;
-		height: auto;
-	}
-
-	.tina-banner-content a {
-		color: white;
-		text-decoration: none;
-		padding-top: 0.5em;
-		font-weight: bold;
-	}
-</style>
