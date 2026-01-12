@@ -1,7 +1,7 @@
 {
   "seo": {
-    "title": "Astro Blog + Tina",
-    "description": "Welcome to my website!",
+    "title": "EnviroPlus Consulting",
+    "description": "Biological, environmental and archaeological monitoring and surveys",
     "siteOwner": "EnviroPlus Consulting LLC"
   },
   "nav": [
@@ -15,15 +15,15 @@
     },
     {
       "title": "Drone Services",
-      "link": "/drone-services"
+      "link": "drone-services"
     },
     {
       "title": "Personnel",
-      "link": "/personnel"
+      "link": "personnel"
     },
     {
       "title": "WBE Certificate",
-      "link": "/wbe-certificate"
+      "link": "wbe-certificate"
     },
     {
       "title": "About",
