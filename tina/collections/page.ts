@@ -94,11 +94,28 @@ export const PageCollection: Collection = {
       label: "Banner",
       type: "object",
       list: true,
+      ui: {
+        defaultItem: () => {
+          return {
+            textPosition: "left",
+          };
+        },
+      },
       fields: [
         {
           type: "string",
           name: "headline",
           label: "Headline",
+        },
+        {
+          name: "textPosition",
+          label: "Text position",
+          type: "string",
+          options: [
+            { value: "left", label: "Left" },
+            { value: "center", label: "Center" },
+            { value: "right", label: "Right" },
+          ],
         },
         {
           type: "string",

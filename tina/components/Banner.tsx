@@ -5,6 +5,14 @@ import { useCallback } from "react";
 import { tinaField } from "tinacms/dist/react";
 import type { PageQuery } from "../__generated__/types";
 
+function getPositionClass(position?: string | null) {
+  return {
+    left: "text-left",
+    center: "text-center justify-center",
+    right: "text-right justify-end",
+  }[position || "left"];
+}
+
 const Banner = ({ page }: { page: PageQuery["page"] }) => {
   const banner = page.banner;
 
@@ -36,7 +44,11 @@ const Banner = ({ page }: { page: PageQuery["page"] }) => {
 
               {item?.headline && (
                 <div className="absolute bg-linear-to-r from-black/40 to-transparent inset-0 flex items-center text-white">
-                  <div className="container">
+                  <div
+                    className={`container flex ${getPositionClass(
+                      item.textPosition
+                    )}`}
+                  >
                     <div className="max-w-xl">
                       <h1 className="font-mdium text-5xl leading-tight">
                         {item?.headline}
