@@ -49,7 +49,7 @@ const Banner = ({ page }: { page: PageQuery["page"] }) => {
                       item.textPosition
                     )}`}
                   >
-                    <div className="max-w-xl">
+                    <div className="max-w-2xl">
                       <h1 className="font-mdium text-5xl leading-tight">
                         {item?.headline}
                       </h1>
