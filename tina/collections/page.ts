@@ -118,14 +118,6 @@ export const PageCollection: Collection = {
           ],
         },
         {
-          type: "string",
-          name: "content",
-          label: "Content",
-          ui: {
-            component: "textarea",
-          },
-        },
-        {
           type: "image",
           name: "image",
           label: "Image",
