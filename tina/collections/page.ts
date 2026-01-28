@@ -98,6 +98,8 @@ export const PageCollection: Collection = {
         defaultItem: () => {
           return {
             textPosition: "left",
+            textAlignment: "middle",
+            textInContainer: false,
           };
         },
       },
@@ -118,9 +120,24 @@ export const PageCollection: Collection = {
           ],
         },
         {
+          name: "textAlignment",
+          label: "Text alignment",
+          type: "string",
+          options: [
+            { value: "top", label: "Top" },
+            { value: "middle", label: "Middle" },
+            { value: "bottom", label: "Bottom" },
+          ],
+        },
+        {
+          type: "boolean",
+          name: "textInContainer",
+          label: "Should the text be inside a container?",
+        },
+        {
           type: "image",
           name: "image",
-          label: "Image",
+          label: "Image or Video",
         },
       ],
     },

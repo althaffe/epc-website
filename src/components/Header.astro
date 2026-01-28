@@ -4,6 +4,10 @@ import config from "../content/config/config.json";
 import IconLink from "./react/IconLink";
 ---
 
+{config.customCSS &&
+  <style set:html={config.customCSS}>
+  </style>
+}
 <header class="border-t-4 border-primary">
   <div class="container pt-6 max-md:pb-2 flex items-end gap-8">
 

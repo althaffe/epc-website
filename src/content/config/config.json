@@ -50,5 +50,6 @@
       "link": "https://github.com/tinacms/tinacms",
       "icon": "TbBrandGithub"
     }
-  ]
+  ],
+  "customCSS": ".banner-content{}"
 }

@@ -12,6 +12,17 @@ function getPositionClass(position?: string | null) {
     right: "text-right justify-end",
   }[position || "left"];
 }
+function getAlignmentClass(alignment?: string | null) {
+  return {
+    top: "items-start",
+    middle: "items-center",
+    bottom: "items-end",
+  }[alignment || "center"];
+}
+function isVideo(name: string) {
+  if (name.endsWith(".mp4") || name.endsWith(".mov")) return true;
+  return false;
+}
 
 const Banner = ({ page }: { page: PageQuery["page"] }) => {
   const banner = page.banner;
@@ -40,14 +51,27 @@ const Banner = ({ page }: { page: PageQuery["page"] }) => {
               key={i}
               className="embla__slide flex-[0_0_100%] min-w-0 relative"
             >
-              <img src={item?.image} className="object-cover size-full" />
+              {isVideo(item?.image) ? (
+                <video
+                  autoPlay
+                  playsInline
+                  muted
+                  loop
+                  src={item?.image}
+                  className="object-cover size-full"
+                />
+              ) : (
+                <img src={item?.image} className="object-cover size-full" />
+              )}
 
               {item?.headline && (
-                <div className="absolute bg-linear-to-r from-black/40 to-transparent inset-0 flex items-center text-white">
+                <div className="banner-content absolute bg-black/40 inset-0 flex items-center text-white">
                   <div
-                    className={`container flex ${getPositionClass(
+                    className={`flex h-full py-8 ${getPositionClass(
                       item.textPosition
-                    )}`}
+                    )} ${getAlignmentClass(item.textAlignment)} ${
+                      item.textInContainer ? "container" : "w-full px-8"
+                    }`}
                   >
                     <div className="max-w-2xl">
                       <h1 className="font-mdium text-5xl leading-tight">
